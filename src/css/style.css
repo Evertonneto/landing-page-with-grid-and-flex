@@ -212,7 +212,7 @@ body{
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background:url(/src/imgs/bolinha1.jpg) center center ;
+    background:url(../imgs/bolinha1.jpg) center center ;
     margin-bottom: 40px;
 }
 
@@ -220,7 +220,7 @@ body{
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background:url(/src/imgs/bolinha2.jpg) top left ;
+    background:url(../imgs/bolinha2.jpg) top left ;
     margin-bottom: 20px;
 }
 
