@@ -2,7 +2,7 @@
 
 ➡️Projeto de curso focado na construção de uma landing page com display grid e flex⬅️
 
-ℹ️ Link Github Pages: 
+ℹ️ Link Github Pages: https://evertonneto.github.io/landing-page-with-grid-and-flex/
 
 ## Versão Desktop
 
