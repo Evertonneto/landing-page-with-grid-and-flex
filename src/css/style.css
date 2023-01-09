@@ -1,0 +1,394 @@
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "hero hero hero hero"
+    "about about about about"
+    "services services services services"
+    "projects projects projects projects"
+    "footer footer footer footer"
+    ;
+
+    grid-template-columns: repeat(4,1fr);
+    font-size: 1.6rem;
+    font-weight: 400;
+
+   
+}
+
+/* header */
+
+.header{
+    grid-area: header;
+    background-color: #fff;
+}
+
+.header .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 7.5rem;
+
+    padding: 2rem 4rem;
+
+
+}
+
+.header h1{
+    font-size: 3rem;
+    font-weight: 700;
+
+    transition: 0.3s ease-in-out;
+}
+
+.header a:hover h1{
+    color: blue;
+}
+
+/* hero */
+
+.hero{
+    grid-area: hero;
+    height: 89vh;
+    background: url(../imgs/hero.jpg) center center no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.hero h2{
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+
+}
+
+.hero::after{
+    content: url(../imgs/seta2.png);
+    position: absolute;
+    height: 35px;
+
+    bottom: 40px;
+
+    animation: downarrow 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes downarrow{
+    0%{
+        -webkit-transform: translateY(0);
+        opacity: 0.4;
+    }
+    100%{
+        -webkit-transform: translateY(0.4em);
+        opacity: 0.9;
+    }
+}
+
+@media(max-width:450px){
+    .hero{
+        height: 60vh;
+
+    }
+
+    .hero h2{
+        font-size: 2.5rem;
+    }
+}
+
+/* about */
+
+.about{
+    grid-area: about;
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    /* max-width: var(--max-width-size); */
+    margin: 0 auto;
+
+}
+
+.about .img{
+    height: 100%;
+    width: 100%;
+}
+
+.about .item{
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    
+}
+
+.about .item h2{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.about .item p{
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 3rem 0;
+
+
+}
+
+.about .item .btn-know-more{
+    font-size: 1.6rem;
+    align-self: flex-start;
+}
+
+.about .item .btn-know-more:hover{
+    font-weight: 700;
+}
+
+.about .img.left{
+    background: url(../imgs/img-left1.jpg) center center no-repeat;
+    
+}
+
+.about .img.right{
+    background: url(../imgs/img-right1.jpg) center center no-repeat;
+    
+}
+
+
+@media(max-width:425px){
+    .about .item{
+        text-align: center;
+    }
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,1fr) ;
+    }
+}
+/* services */
+
+.services{
+    grid-area: services;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+
+}
+
+.services .service{
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+    text-align: center;
+}
+
+.services .service h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.services .service p{
+    font-size: 2rem;
+    font-weight: 400;
+    max-width: 400px;
+
+}
+
+.services .service .caixa-redonda1{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background:url(/src/imgs/bolinha1.jpg) center center ;
+    margin-bottom: 40px;
+}
+
+.services .service .caixa-redonda2{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background:url(/src/imgs/bolinha2.jpg) top left ;
+    margin-bottom: 20px;
+}
+
+.services .service:nth-child(1){
+    background-color: aqua;
+}
+
+.services .service:nth-child(2){
+    background-color: skyblue;
+}
+
+@media (max-width:725px){
+    .services{
+        
+        grid-template-columns: 1fr;
+    }
+
+    
+
+    .services .service .caixa-redonda1,
+    .services .service .caixa-redonda2{
+        transform: scale(0.7);
+    }
+}
+
+
+
+/* projects */
+
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.projects img{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.projects a{
+    transition: 0.4s;
+}
+
+.projects a:hover{
+    opacity: 0.8;
+}
+
+@media(max-width:768px){
+    .projects{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media(max-width:425px){
+    .projects{
+        grid-template-columns: 1fr;
+    }
+
+}
+/* footer */
+
+.footer{
+    background-color: lightgreen;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10rem 0;
+
+}
+
+.footer h4{
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+
+    display: inline;
+    
+
+    padding: 1rem;
+    border-radius: 1rem ;
+    
+    transition: 0.5s ease-in-out;
+
+}
+
+.footer h4:hover{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    
+}
+
+
+.footer nav{
+    margin: 5rem 0;
+}
+
+.footer nav ul{
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.footer nav ul li a{
+    font-weight: 500;
+    font-size: 2rem;
+    margin:20px;
+
+    transition: 0.4s;
+
+}
+
+.footer nav ul li a:hover{
+    font-weight: 700;
+    color:white;
+}
+
+
+.footer .social i{
+    font-size: 3rem;
+    transition: 0.3s;
+}
+
+.footer .social a{
+    margin: 2rem;
+}
+
+.footer .social a:hover{
+    color: #fff;
+}
+
+/* Button voltar topo */
+
+.voltar-topo{
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+
+    transition: 0.4s;
+}
+
+.voltar-topo:hover{
+    animation: uparrow 1.2s infinite alternate ease-in-out;
+    background-color: rgb(185, 163, 163);
+
+    
+}
+
+@keyframes uparrow{
+    0%{
+        -webkit-transform: translateY(0);
+    }
+    50%{
+        -webkit-transform: translateY(-0.4em);
+    }
+    
+}
+
+
+
